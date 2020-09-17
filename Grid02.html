@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item1 { grid-area: header; } /*  Bir önceki soru ile neredeyse aynı şekilde kodlanmış sadece bilgileri ve açılır liste kısmı farklıdır.*/
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: rgb(57, 86, 110);
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(86, 216, 255, 0.8);
+  padding: 20px 0;
+  font-size: 30px;
+  color: black;
+}
+
+.dropbtn { /* Açılır listenin açılmadan önceki yazı stilini  ayarladım*/
+  background-color: teal;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown { /*  Açılır listenin açıldıktan sonraki yazı stilini ayarladım.*/
+  position: relative;
+  display: inline-block;
+  padding: 40px;
+}
+
+.dropdown-content { /* Açılır  listenin açıldıktan sonraki dizayn(tasarımını) ayarladım*/
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: turquoise;
+}
+</style>
+</head>
+<body>
+    
+<div class="grid-container">
+  <div class="item1" style="text-align: center;"><b>Yıldız Bilgisayar</b></div>
+  <div class="item2">
+    <div class="dropdown">
+        <button class="dropbtn">Menu</button> <!-- Burada listenin elemanlarının bir buton şeklinde gözükmesini sağladım. Nereye yönlendirilmesi gerektiğini ayarladım -->
+        <div class="dropdown-content">  <!-- Geri kalan kısım bir önceki soru ile aynıdır-->
+        <a href="#">Mouselar</a> 
+        <a href="#">Klavyeler</a>
+        <a href="#">Kameralar</a>
+        <a href="#">Laptoplar</a>
+        <a href="#">Ultrabooklar</a>
+        <a href="#">Gaming Laptoplar</a>
+        <a href="#">Masaüstü</a>
+        <a href="#">Workstationlar</a>
+        <a href="#">Monitörler</a>
+        <a href="#">Ekran Kartları</a>
+        <a href="#">İşlemciler</a>
+        <a href="#">Ramler</a>
+        </div>
+      </div>
+  </div>
+  <div class="item3">Ekran kartı, bilgisayarın görüntü vermesini sağlayan birimidir. 
+        Ekran kartları harici ISA, VLB, PCI, AGP veya PCI-Express veriyollarını kullanan
+        PC kartları olarak veya anakart üzerinde chipset içerisinde yerleşik olarak bulunmaktadır.
+        Günümüzde ekran kartları için Gpu üreten iki büyük firma bulunmaktadır. Nvidia ve AMD aralarındaki 
+        sürekli rekabetten dolayı her geçen gün Gpu mimarilerini güçlendirmekte ve kapasitelerini arttırmaktadır.
+    </div>  
+  <div class="item4">
+    <img src="https://media.chip.com.tr/images/temp/user/72ab2b4e7ee8574b08efa2ea2243c14d.jpg" alt="ekran kartı">
+  </div>
+  <div class="item5">Anıl Yıldız / 201133262028 / Dumlupınar Üniversitesi Tavşanlı MYO</div>
+</div>
+
+</body>
+</html>

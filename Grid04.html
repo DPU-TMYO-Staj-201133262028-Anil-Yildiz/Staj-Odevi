@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+.item6 { grid-area: footer2;}
+.item7 { grid-area: footer3;}
+.item8 { grid-area: footer4;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header'
+    'menu main main main right'
+    'footer footer2 footer3 footer4 footer4 ';
+  grid-gap: 10px;
+  background-color: rgb(57, 86, 110);
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(86, 216, 255, 0.8);
+  padding: 20px 0;
+  font-size: 30px;
+  color: black;
+}
+
+@media screen and (max-width: 500px) { /* Bu kısım hariç diğer kısımlar önceki soru ile aynıdır. Bu kısımda 528 piksel büyükken yapılması gereken değişikliklerin komutunu verdim. Menunun tek bir sütun şeklinde olup item1'in açılır liste şekline gelmesi gibi*/
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'menu menu menu menu'
+            'header header header header'
+            'right right right right'
+            'main main main main'
+            'footer4 footer4 footer4 footer4'
+            'footer3 footer3 footer3 footer3'
+            'footer2 footer2 footer2 footer2'
+            'footer footer footer footer';
+        grid-gap: 10px;
+        background-color: rgb(57, 86, 110);
+        padding: 10px;
+    }
+    .menu-bar{
+        text-align: center;
+    }
+    .menu-bar ol{
+      display: inline-flex;
+      list-style: none;
+      color: white;
+    }
+    .menu-bar ol li{
+      width: 100px;
+    }
+    .menu-bar ol li a{
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .active, .menu-bar ol li:hover{
+      background: #686868;
+      border-radius: 3px;
+    }
+    .sub-menu-1{
+      display: none;
+    }
+    .menu-bar ol li:hover .sub-menu-1{
+      display: block;
+      position: absolute;
+      margin-top:15px;
+    }
+    .menu-bar ol li:hover .sub-menu-1 ul{
+      display: block;
+      margin-top:15px;
+    }
+}
+.menu-bar{
+  font-size: small;
+}
+</style>
+</head>
+<body>
+    
+<div class="grid-container">
+  <div class="item1" style="text-align: center;">Anıl Yıldız</div>
+  <div class="item2">
+    <h5>Menu</h5>
+    <div class="menu-bar">
+      <ol>
+        <li class="active"><a href="#">Mouselar</a></li>
+        <li><a href="#">Klavyeler</a></li>
+        <li><a href="#">Kameralar</a></li>
+        <li><a href="#">PC</a>
+          <div class="sub-menu-1">
+            <ul>
+              <li><a href="#">Laptoplar</a></li>
+              <li><a href="#">Ultrabooklar</a></li>
+              <li><a href="#">Gaming Laptoplar</a></li>
+              <li><a href="#">Masaüstü</a></li>
+              <li><a href="#">Workstationlar</a></li>
+          </ul>
+          </div>
+        </li>
+        <li><a href="#">Monitörler</a></li>
+        <li><a href="#">Ekran Kartları</a></li>
+      </ol>
+    </div>
+  
+  </div>
+  <div class="item3">Fare (mouse), genellikle avuç içinde tutulan, hareketleri bilgisayar ekranındaki
+        imlecin hareketlerini kontrol eden, bilgi giriş aygıtı. Fare modeline göre üzerinde bir veya daha fazla 
+        sayıda tuş ve tekerlek bulunabilir. İlk bilgisayar faresi 1964 yılında Douglas Engelbart tarafından yapıldı. 
+        Fare el hareketlerini mekanik, LED'li optik, laserli optik yöntemle algılayabilir. Fare elde ettiği bilgileri 
+        bilgisayara kablo, kızılötesi, radyo dalgalar veya Bluetooth ile aktarabilir. Programın yapısına göre bazen
+        menü seçmek veya ekran içerisinde çalışılacak noktaya gidebilmek klavyedeki gösterge tuşlarıyla uzun zaman 
+        alabilir. Bu işlemin hızlandırılmasında görev alır.</div>  
+  <div class="item4">
+    <img src="https://www.nenedirvikipedi.com/wp-content/uploads/2014/02/farenin-mouse-i%C5%9Flevselli%C4%9Fi.jpg" alt="mouse">
+  </div>
+  <div class="item5">Öğrenci No</div>
+  <div class="item6">İAT</div>
+  <div class="item7">Tavşanlı MYO</div>
+  <div class="item8">Kütahya Dumlupınar Üniversitesi</div>
+</div>
+
+</body>
+</html>
